@@ -58,7 +58,7 @@ int main(int argc, char* argv[]) {
     thread_handles = malloc (thread_count*sizeof(pthread_t)); 
     pthread_mutex_init(&mutex, NULL);
     
-    GET_TIME(start); 
+    GET_TIME(start); // measure latency 
     for (thread = 0; thread < thread_count; thread++)  
         pthread_create(&thread_handles[thread], NULL, Operate, (void*) thread);  
 

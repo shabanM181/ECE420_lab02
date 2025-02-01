@@ -63,7 +63,7 @@ int main(int argc, char* argv[]){
     thread_handles = malloc(COM_CLIENT_THREAD_COUNT*sizeof(pthread_t)); 
     /* Initialize socket address and port*/
     sock_var_.sin_addr.s_addr=inet_addr(server_ip);
-    sock_var_.sin_port=server_port;
+    sock_var_.sin_port=htons(server_port);
     sock_var_.sin_family=AF_INET;
     /* Create threads */
     for (thread = 0; thread < COM_CLIENT_THREAD_COUNT; thread++)  

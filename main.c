@@ -67,8 +67,7 @@ void* handle_client(void* arg) {
    
     GET_TIME(finish);
     elapsed = finish - start; 
-    elapsed = finish - start;   
-    printf("The elapsed time is %e seconds\n", elapsed);
+    saveTimes(&elapsed, 1);
 
     write(client_fd, buffer, COM_BUFF_SIZE);
     close(client_fd);

@@ -104,7 +104,7 @@ int main(int argc, char* argv[]){
     thread_handles = malloc(NUM_THREADS_*sizeof(pthread_t)); 
     /* Initialize socket address and port*/
     sock_var_.sin_addr.s_addr=inet_addr(server_ip);
-    sock_var_.sin_port=server_port;
+    sock_var_.sin_port=htons(server_port);
     sock_var_.sin_family=AF_INET;
     /* Main loop, attack multiple positions */
     for (i=0; i<NUM_ATTACKES_; ++i){
